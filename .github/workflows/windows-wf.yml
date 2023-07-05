@@ -1,0 +1,25 @@
+name: "windows powershell CI workflow "
+
+
+on:
+  push:
+    branches: [ test ]
+
+
+
+jobs:
+
+  windows-latest-pwsh-scripts:
+    name: "pwsh scripts - windows-latest Microsoft Windows Server 2019 Datacenter"  
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: "powershell version" 
+      run: |
+        $PSVersionTable
+        pwsh                                
+    - name: "list running processes and their ports" 
+      run: .\scripts\running_processes_ports.ps1
+      shell: pwsh  
+
