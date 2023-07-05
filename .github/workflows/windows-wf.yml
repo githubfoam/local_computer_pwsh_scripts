@@ -22,4 +22,6 @@ jobs:
     - name: "list running processes and their ports" 
       run: .\scripts\running_processes_ports.ps1
       shell: pwsh  
-
+    - name: "list running processes and their ports" 
+      run: .\scripts\running_processes_ports_detail.ps1
+      shell: pwsh  
